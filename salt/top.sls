@@ -2,6 +2,7 @@
 
 base:
     '*':
+        - users
         - opensmtpd
         - dovecot
         #- taskd
