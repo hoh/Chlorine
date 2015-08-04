@@ -1,5 +1,9 @@
 # Users for email
 
+ubuntu:
+    user.absent:
+        - purge: True
+
 okso:
     user.present:
         - fullname: OKso
