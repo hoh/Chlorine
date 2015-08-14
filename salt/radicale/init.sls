@@ -1,3 +1,8 @@
+radicale:
+    user.present
+        - fullname: "Radicale Daemon"
+
+
 virtualenv:
     pkg.installed:
         - names:
@@ -6,19 +11,19 @@ virtualenv:
 
 /var/lib/radicale:
     file.directory:
-        - user: okso
+        - user: radicale
 
 /var/lib/radicale/venv:
     virtualenv.managed:
         - system_site_packages: False
-        - user: okso
+        - user: radicale
         - require:
             - pkg: virtualenv
             - file: /var/lib/radicale
 
 pip:
     pip.installed:
-        - user: okso
+        - user: radicale
         - bin_env: /var/lib/radicale/venv
         - upgrade: True
         - require:
@@ -26,7 +31,7 @@ pip:
 
 radicale:
     pip.installed:
-        - user: okso
+        - user: radicale
         - bin_env: /var/lib/radicale/venv
         - require:
             - pip: pip
@@ -51,13 +56,13 @@ radicale:
 /var/lib/radicale/device.key:
     file.managed:
         - source: salt://certificates/device.key
-        - user: okso
-        - group: okso
+        - user: radicale
+        - group: radicale
         - mode: 600
 
 /var/lib/radicale/device.crt:
     file.managed:
         - source: salt://certificates/device.crt
-        - user: okso
-        - group: okso
+        - user: radicale
+        - group: radicale
         - mode: 600
