@@ -1,5 +1,6 @@
-radicale:
+radicale user:
     user.present
+        - name: radicale
         - fullname: "Radicale Daemon"
 
 
