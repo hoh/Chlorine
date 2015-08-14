@@ -5,5 +5,5 @@ base:
         - users
         - opensmtpd
         - dovecot
+        - radicale
         #- taskd
-        #- radicale
