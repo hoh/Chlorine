@@ -4,7 +4,7 @@ daemon = False
 # SSL flag, enable HTTPS protocol
 ssl = True
 # SSL certificate path
-certificate = /var/lib/radicale/device.csr
+certificate = /var/lib/radicale/device.crt
 # SSL private key
 key = /var/lib/radicale/device.key
 # SSL Protocol used. See python's ssl module for available values
