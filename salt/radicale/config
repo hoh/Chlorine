@@ -30,6 +30,11 @@ htpasswd_filename = /etc/radicale/users
 # Value: plain | sha1 | crypt
 htpasswd_encryption = crypt
 
+[rights]
+# Rights backend
+# Value: None | authenticated | owner_only | owner_write | from_file | custom
+type = owner_only
+
 [storage]
 # Storage backend
 # -------
