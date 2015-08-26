@@ -48,6 +48,18 @@ radicale:
         - user: root
         - group: root
 
+/etc/radicale/logging:
+    file.managed:
+        - source: salt://radicale/logging
+        - user: root
+        - group: root
+
+/var/log/radicale:
+    file.managed:
+        - user: radicale
+        - group: radicale
+        - mode: 644
+
 /etc/radicale/users:
     file.managed:
         - source: salt://radicale/users
