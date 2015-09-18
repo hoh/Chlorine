@@ -7,4 +7,6 @@ base:
         - dovecot
     'calcardserver':
         - radicale
+    'chatserver':
+        - prosody
         #- taskd
