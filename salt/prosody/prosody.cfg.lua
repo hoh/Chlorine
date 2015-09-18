@@ -166,17 +166,17 @@ log = {
 -- You need to add a VirtualHost entry for each domain you wish Prosody to serve.
 -- Settings under each VirtualHost entry apply *only* to that host.
 
-VirtualHost "example.com"
-	enabled = false -- Remove this line to enable this host
+VirtualHost "{{ hostname }}"
+	enabled = true -- Remove this line to enable this host
 
 	-- Assign this host a certificate for TLS, otherwise it would use the one
 	-- set in the global section (if any).
 	-- Note that old-style SSL on port 5223 only supports one certificate, and will always
 	-- use the global one.
-	ssl = {
-		key = "/etc/prosody/certs/example.com.key";
-		certificate = "/etc/prosody/certs/example.com.crt";
-	}
+	-- ssl = {
+	-- 	key = "/etc/prosody/certs/example.com.key";
+	-- 	certificate = "/etc/prosody/certs/example.com.crt";
+	-- }
 
 ------ Components ------
 -- You can specify components to add hosts that provide special services,
