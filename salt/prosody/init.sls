@@ -15,6 +15,14 @@ prosody:
         - require:
             - pkgrepo: prosody
 
+    service.running:
+        - require:
+            - pkg: prosody
+        - watch:
+            - file: /etc/prosody/prosody.cfg.lua
+            - file: /etc/ssl/private/device.key
+            - file: /etc/ssl/private/device.crt
+
 
 /etc/prosody/prosody.cfg.lua:
     file.managed:
@@ -22,3 +30,17 @@ prosody:
         - template: jinja
         - context:
             hostname: chat.okso.be
+
+/etc/ssl/private/device.key:
+    file.managed:
+        - source: salt://certificates/device.key
+        - user: prosody
+        - group: root
+        - mode: 600
+
+/etc/ssl/private/device.crt:
+    file.managed:
+        - source: salt://certificates/device.crt
+        - user: prosody
+        - group: root
+        - mode: 600
