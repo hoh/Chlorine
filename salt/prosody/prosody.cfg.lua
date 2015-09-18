@@ -41,7 +41,7 @@ modules_enabled = {
 	-- Not essential, but recommended
 		"private"; -- Private XML storage (for room bookmarks, etc.)
 		"vcard"; -- Allow users to set vCards
-	
+
 	-- These are commented by default as they have a performance impact
 		--"privacy"; -- Support privacy lists
 		--"compression"; -- Stream compression (Debian: requires lua-zlib module to work)
@@ -57,7 +57,7 @@ modules_enabled = {
 	-- Admin interfaces
 		"admin_adhoc"; -- Allows administration via an XMPP client that supports ad-hoc commands
 		--"admin_telnet"; -- Opens telnet console interface on localhost port 5582
-	
+
 	-- HTTP modules
 		--"bosh"; -- Enable BOSH clients, aka "Jabber over HTTP"
 		--"http_files"; -- Serve static files from a directory over HTTP
@@ -65,7 +65,7 @@ modules_enabled = {
 	-- Other specific functionality
 		"posix"; -- POSIX functionality, sends server to background, enables syslog, etc.
 		--"groups"; -- Shared roster support
-		--"announce"; -- Send announcement to all online users
+		"announce"; -- Send announcement to all online users
 		--"welcome"; -- Welcome users who register accounts
 		--"watchregistrations"; -- Alert admins of registrations
 		--"motd"; -- Send a message to users when they log in
@@ -98,14 +98,14 @@ pidfile = "/var/run/prosody/prosody.pid";
 -- These are the SSL/TLS-related settings. If you don't want
 -- to use SSL/TLS, you may comment or remove this
 ssl = {
-	key = "/etc/prosody/certs/localhost.key";
-	certificate = "/etc/prosody/certs/localhost.crt";
+	key = "/etc/ssl/private/device.key";
+	certificate = "/etc/ssl/private/device.crt";
 }
 
 -- Force clients to use encrypted connections? This option will
 -- prevent clients from authenticating unless they are using encryption.
 
-c2s_require_encryption = false
+c2s_require_encryption = true
 
 -- Force certificate authentication for server-to-server connections?
 -- This provides ideal security, but requires servers you communicate
