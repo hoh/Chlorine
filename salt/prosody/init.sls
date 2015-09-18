@@ -14,3 +14,11 @@ prosody:
     pkg.installed:
         - require:
             - pkgrepo: prosody
+
+
+/etc/prosody/prosody.cfg.lua:
+    file.managed:
+        - source: salt://prosody/prosody.cfg.lua
+        - template: jinja
+        - context:
+            hostname: chat.okso.be
