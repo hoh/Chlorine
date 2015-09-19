@@ -13,7 +13,6 @@ required to make it easily usable for other people.
 ## Next steps / Todo
 
 * Refactor user-specific configuration into [Pillars](https://docs.saltstack.com/en/latest/topics/pillar/index.html)
-* Add XMPP service for IM with Prosody
 * Auditing the security of the configuration of the different services
 
 ## Contribute
