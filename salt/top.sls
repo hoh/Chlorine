@@ -9,4 +9,6 @@ base:
         - radicale
     'chatserver':
         - prosody
+    'gitserver':
+        - git-remote
         #- taskd
